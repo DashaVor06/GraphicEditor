@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Rectangle : Figure
+    internal class Rectangle : SimpleFigure
     {
         public Rectangle(List<Point> points) : base(points)
         {

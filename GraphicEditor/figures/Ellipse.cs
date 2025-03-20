@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Ellipse : Figure
+    internal class Ellipse : SimpleFigure
     {
         public Ellipse(List<Point> points) : base(points)
         {

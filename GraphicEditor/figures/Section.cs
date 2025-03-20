@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Section : Figure
+    internal class Section : SimpleFigure
     {
         public Section(List<Point> points) : base(points)
         {

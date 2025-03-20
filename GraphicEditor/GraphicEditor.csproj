@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="figures\Rectangle.cs" />
     <Compile Include="figures\Section.cs" />
+    <Compile Include="SimpleFigure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
