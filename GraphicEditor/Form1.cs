@@ -70,27 +70,19 @@ namespace Laba1
 
             return list;
         }
-        
-        private Point GetCursorPosition()
-        {
-            Point point = new Point();
-            point.X = Cursor.Position.X - Location.X - (Width - ClientSize.Width) / 2;
-            point.Y = Cursor.Position.Y - Location.Y - (Height - ClientSize.Height);
-            return point;
-        }
 
         //laba1
         private void fMain_Load(object sender, EventArgs e)
         {
             list = fillList();
-            list.Print(this);
+            list.Print(this); 
         }
 
         //laba2
         private void fMain_Click(object sender, EventArgs e)
         {
             
-            Point point = GetCursorPosition();
+            Point point = this.PointToClient(Cursor.Position);
             int err = fig.Add(point);
 
             if (err != 0)

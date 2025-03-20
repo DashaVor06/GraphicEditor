@@ -41,13 +41,7 @@ namespace Laba1
                 return 0;
             }
             else
-            {
-                //Figure newFig = new Ellipse();
-                //newFig.points.Add(point);
-                //return newFig;
-                return 1;
-            }
-               
+                return 1;              
         }
     }
 }

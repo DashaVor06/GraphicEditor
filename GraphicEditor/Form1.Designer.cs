@@ -137,6 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 450);
             this.Controls.Add(this.tstrMain);
+            this.DoubleBuffered = true;
             this.Name = "fMain";
             this.Text = "Графический редактор";
             this.Load += new System.EventHandler(this.fMain_Load);

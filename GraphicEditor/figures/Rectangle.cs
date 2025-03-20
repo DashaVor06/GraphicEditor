@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Section : Figure
+    internal class Rectangle : Figure
     {
-        public Section(List<Point> points) : base(points)
+        public Rectangle(List<Point> points) : base(points)
         {
         }
-        public Section() : base()
+        public Rectangle() : base()
         {
         }
 
@@ -21,10 +22,12 @@ namespace Laba1
         {
             if (points.Count == 2)
             {
-                
+                int width = Math.Abs(points[1].X - points[0].X);
+                int height = Math.Abs(points[1].Y - points[0].Y);
+
                 using (Pen pen = new Pen(Color.Black, 2))
                 {
-                    e.Graphics.DrawLine(pen, points[0], points[1]);
+                    e.Graphics.DrawRectangle(pen, points[0].X, points[0].Y, width, height);
                 }
             }
         }
@@ -37,13 +40,7 @@ namespace Laba1
                 return 0;
             }
             else
-            {
-                //Figure newFig = new Ellipse();
-                //newFig.points.Add(point);
-                //return newFig;
                 return 1;
-            }
         }
-
     }
 }

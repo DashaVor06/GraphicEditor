@@ -20,10 +20,7 @@ namespace Laba1
             this.points = points;
         }
 
-        public Figure()
-        {
-            points = new List<Point>();
-        }
+        public Figure() : this(new List<Point>()) { }
 
         public List<Point> points
         {
