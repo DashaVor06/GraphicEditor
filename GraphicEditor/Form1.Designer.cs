@@ -140,7 +140,6 @@
             this.DoubleBuffered = true;
             this.Name = "fMain";
             this.Text = "Графический редактор";
-            this.Load += new System.EventHandler(this.fMain_Load);
             this.Click += new System.EventHandler(this.fMain_Click);
             this.tstrMain.ResumeLayout(false);
             this.tstrMain.PerformLayout();

@@ -22,61 +22,6 @@ namespace Laba1
         }
 
         private Figure fig;
-        private List list;
-
-        private List fillList()
-        {
-            List list = new List();
-
-            List<Point> points0 = new List<Point>
-            {
-                new Point(200, 50),
-                new Point(300, 100)
-            };
-            list.Add(new Section(points0));
-
-            List<Point> points1 = new List<Point>
-            {
-                new Point(50, 230),
-                new Point(70, 270),
-                new Point(80, 240),
-                new Point(90, 270),
-                new Point(110, 230)
-            };
-            list.Add(new Polyline(points1));
-
-            List<Point> points2 = new List<Point>
-            {
-                new Point(150, 230),
-                new Point(170, 270),
-                new Point(180, 240),
-                new Point(160, 210)
-            };
-            list.Add(new Polygon(points2));
-
-            List<Point> points3 = new List<Point>
-            {
-                new Point(100, 100),
-                new Point(200, 130)
-            };
-            list.Add(new Ellipse(points3));
-
-            List<Point> points4 = new List<Point>
-            {
-                new Point(200, 150),
-                new Point(250, 200)
-            };
-            list.Add(new Rectangle(points4));
-
-            return list;
-        }
-
-        //laba1
-        private void fMain_Load(object sender, EventArgs e)
-        {
-            list = fillList();
-            list.Print(this); 
-        }
 
         //laba2
         private void fMain_Click(object sender, EventArgs e)
