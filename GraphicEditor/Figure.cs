@@ -15,13 +15,22 @@ namespace Laba1
 
         private List<Point> _points;
 
+        private int _thikness;
+
         public Figure(List<Point> points)
         {
             this.points = points;
+            this.thikness = 2;
         }
 
         public Figure() : this(new List<Point>()) 
         { 
+        }
+
+        public int thikness
+        {
+            get { return _thikness; }
+            set { _thikness = value; }
         }
 
         public List<Point> points

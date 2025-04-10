@@ -16,55 +16,77 @@ namespace Laba1
 
     public partial class fMain : Form
     {
+        private Figure fig = null;
+
         public fMain()
         {
             InitializeComponent();
         }
 
-        private Figure fig;
-
-        //laba2
         private void fMain_Click(object sender, EventArgs e)
         {
-            
-            Point point = this.PointToClient(Cursor.Position);
-            int err = fig.Add(point);
-
-            if (err != 0)
+            if (fig != null)
             {
-                var newFig = Activator.CreateInstance(fig.GetType()) as dynamic;
-                fig = newFig;
-                fig.Add(point);
-            }
+                Point point = this.PointToClient(Cursor.Position);
+                int err = fig.Add(point);
 
-            Paint -= new PaintEventHandler(fig.Print);
-            Paint += new PaintEventHandler(fig.Print);
-            Invalidate();
+                if (err != 0)
+                {
+                    var newFig = Activator.CreateInstance(fig.GetType()) as dynamic;
+                    fig = newFig;
+                    fig.Add(point);
+                }
+
+                Paint -= new PaintEventHandler(fig.Print);
+                Paint += new PaintEventHandler(fig.Print);
+                Invalidate();
+            }
         }
 
-        private void tsbtSection_Click(object sender, EventArgs e)
+
+        private void отрезокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Section();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ломанаяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Polyline();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            fig = new Polygon();
-        }
-
-        private void tsbtRectangle_Click(object sender, EventArgs e)
+        private void прямоугольникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Rectangle();
         }
 
-        private void tsbtEllipse_Click(object sender, EventArgs e)
+        private void многоугольникToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fig = new Polygon();
+        }
+
+        private void эллипсToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Ellipse();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog();
+        }
+
+        private void ооToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fig != null) fig.thikness = 1;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (fig != null) fig.thikness = 2;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (fig != null) fig.thikness = 3;
         }
     }
 }

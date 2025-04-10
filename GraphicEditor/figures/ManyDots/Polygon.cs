@@ -8,31 +8,26 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Polyline : Figure
+    internal class Polygon : ManyDotsFigure
     {
-        public Polyline(List<Point> points) : base(points)
+        public Polygon(List<Point> points) : base(points)
         {
         }
-        public Polyline() : base()
+
+        public Polygon() : base()
         {
         }
 
         public override void Print(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Black, 2))
+            using (Pen pen = new Pen(Color.Black, this.thikness))
             {
                 if (points.Count > 1)
                 {
                     Point[] arrPoints = points.ToArray();
-                    e.Graphics.DrawLines(pen, arrPoints);
+                    e.Graphics.DrawPolygon(pen, arrPoints);
                 }
             }
-        }
-
-        public override int Add(Point point)
-        {
-            points.Add(point);
-            return 0;
         }
     }
 }

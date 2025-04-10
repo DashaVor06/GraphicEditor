@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Rectangle : SimpleFigure
+    internal class Rectangle : TwoDotsFigure
     {
         public Rectangle(List<Point> points) : base(points)
         {
@@ -25,22 +25,11 @@ namespace Laba1
                 int width = Math.Abs(points[1].X - points[0].X);
                 int height = Math.Abs(points[1].Y - points[0].Y);
 
-                using (Pen pen = new Pen(Color.Black, 2))
+                using (Pen pen = new Pen(Color.Black, this.thikness))
                 {
                     e.Graphics.DrawRectangle(pen, points[0].X, points[0].Y, width, height);
                 }
             }
-        }
-
-        public override int Add(Point point)
-        {
-            if (points.Count < 2)
-            {
-                points.Add(point);
-                return 0;
-            }
-            else
-                return 1;
         }
     }
 }

@@ -8,29 +8,24 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    public abstract class SimpleFigure: Figure
+    internal class Polyline : ManyDotsFigure
     {
-        public SimpleFigure(List<Point> points) : base(points)
+        public Polyline(List<Point> points) : base(points)
         {
         }
-        public SimpleFigure() : base()
+        public Polyline() : base()
         {
         }
 
         public override void Print(object sender, PaintEventArgs e)
         {
-        }
-
-        public override int Add(Point point)
-        {
+            using (Pen pen = new Pen(Color.Black, this.thikness))
             {
-                if (points.Count < 2)
+                if (points.Count > 1)
                 {
-                    points.Add(point);
-                    return 0;
+                    Point[] arrPoints = points.ToArray();
+                    e.Graphics.DrawLines(pen, arrPoints);
                 }
-                else
-                    return 1;
             }
         }
     }

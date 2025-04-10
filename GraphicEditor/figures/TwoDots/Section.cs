@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Section : SimpleFigure
+    internal class Section : TwoDotsFigure
     {
         public Section(List<Point> points) : base(points)
         {
@@ -22,22 +22,11 @@ namespace Laba1
             if (points.Count == 2)
             {
                 
-                using (Pen pen = new Pen(Color.Black, 2))
+                using (Pen pen = new Pen(Color.Black, this.thikness))
                 {
                     e.Graphics.DrawLine(pen, points[0], points[1]);
                 }
             }
-        }
-
-        public override int Add(Point point)
-        {
-            if (points.Count < 2)
-            {
-                points.Add(point);
-                return 0;
-            }
-            else
-                return 1;
         }
 
     }
