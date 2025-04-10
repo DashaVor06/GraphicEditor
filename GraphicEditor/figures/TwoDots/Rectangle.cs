@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Laba1
 {
@@ -25,9 +26,9 @@ namespace Laba1
                 int width = Math.Abs(points[1].X - points[0].X);
                 int height = Math.Abs(points[1].Y - points[0].Y);
 
-                using (Pen pen = new Pen(Color.Black, this.thikness))
+                using (Pen pen = new Pen(this.color, this.thikness))
                 {
-                    e.Graphics.DrawRectangle(pen, points[0].X, points[0].Y, width, height);
+                    e.Graphics.DrawRectangle(pen,Math.Min(points[0].X, points[1].X), Math.Min(points[0].Y, points[1].Y), width, height);
                 }
             }
         }

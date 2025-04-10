@@ -19,7 +19,7 @@ namespace Laba1
 
         public override void Print(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Black, this.thikness))
+            using (Pen pen = new Pen(this.color, this.thikness))
             {
                 if (points.Count > 1)
                 {

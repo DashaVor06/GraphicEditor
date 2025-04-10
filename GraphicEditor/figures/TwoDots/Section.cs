@@ -22,7 +22,7 @@ namespace Laba1
             if (points.Count == 2)
             {
                 
-                using (Pen pen = new Pen(Color.Black, this.thikness))
+                using (Pen pen = new Pen(this.color, this.thikness))
                 {
                     e.Graphics.DrawLine(pen, points[0], points[1]);
                 }

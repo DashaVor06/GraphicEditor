@@ -133,6 +133,8 @@
   <ItemGroup>
     <None Include="pictures\icons8-линия3-16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="plugins\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

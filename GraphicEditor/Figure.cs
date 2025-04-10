@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Laba1
 {
@@ -14,13 +15,14 @@ namespace Laba1
         public abstract int Add(Point point);
 
         private List<Point> _points;
-
         private int _thikness;
+        private Color _color;
 
         public Figure(List<Point> points)
         {
             this.points = points;
             this.thikness = 2;
+            this.color = Color.Black;
         }
 
         public Figure() : this(new List<Point>()) 
@@ -37,6 +39,12 @@ namespace Laba1
         {
             get { return _points; }
             set { _points = value; }
+        }
+
+        public Color color
+        {
+            get { return _color; }
+            set { _color = value; }
         }
     }
 }

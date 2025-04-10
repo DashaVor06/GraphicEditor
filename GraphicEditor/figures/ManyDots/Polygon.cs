@@ -20,12 +20,18 @@ namespace Laba1
 
         public override void Print(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Black, this.thikness))
+            using (Pen pen = new Pen(this.color, this.thikness))
             {
                 if (points.Count > 1)
                 {
                     Point[] arrPoints = points.ToArray();
-                    e.Graphics.DrawPolygon(pen, arrPoints);
+                    for (int i = 1; i < arrPoints.Length; i++)
+                    {
+                        e.Graphics.DrawLine(pen, arrPoints[i], arrPoints[i-1]);
+                    }
+
+                    e.Graphics.DrawLine(pen, arrPoints[0], arrPoints[arrPoints.Length-1]);
+
                 }
             }
         }

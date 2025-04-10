@@ -25,7 +25,7 @@ namespace Laba1
                 int width = Math.Abs(points[0].X - points[1].X);
                 int height = Math.Abs(points[0].Y - points[1].Y);
 
-                using (Pen pen = new Pen(Color.Black, this.thikness))
+                using (Pen pen = new Pen(this.color, this.thikness))
                 {
                     e.Graphics.DrawEllipse(pen, points[0].X, points[0].Y, width, height);
                 }

@@ -17,6 +17,8 @@ namespace Laba1
     public partial class fMain : Form
     {
         private Figure fig = null;
+        private List<Figure> _list = new List<Figure>();
+
 
         public fMain()
         {
@@ -47,34 +49,42 @@ namespace Laba1
         private void отрезокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Section();
+            _list.Add(fig);
         }
 
         private void ломанаяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Polyline();
+            _list.Add(fig);
         }
 
         private void прямоугольникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Rectangle();
+            _list.Add(fig);
         }
 
         private void многоугольникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Polygon();
+            _list.Add(fig);
         }
 
         private void эллипсToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Ellipse();
+            _list.Add(fig);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            colorDialog.ShowDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                fig.color = colorDialog.Color;
+            }
         }
 
-        private void ооToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fig != null) fig.thikness = 1;
         }
@@ -87,6 +97,15 @@ namespace Laba1
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             if (fig != null) fig.thikness = 3;
+        }
+
+        private void однороднаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog();
+        }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
         }
     }
 }
