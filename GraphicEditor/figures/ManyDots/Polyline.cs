@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laba1
@@ -19,7 +15,7 @@ namespace Laba1
 
         public override void Print(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(this.color, this.thikness))
+            using (Pen pen = new Pen(this.border, this.thikness))
             {
                 if (points.Count > 1)
                 {

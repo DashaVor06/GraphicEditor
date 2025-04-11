@@ -1,28 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Laba1
 {
-
     public partial class fMain : Form
     {
         private Figure fig = null;
-        private List<Figure> _list = new List<Figure>();
-
-
+        private int _thikness = 2;
+        
         public fMain()
         {
             InitializeComponent();
+        }
+
+        private void print()
+        {
+            if (fig != null)
+            {
+                fig.border = colorDialogBorder.Color;
+                fig.filling = colorDialogFilling.Color;
+                fig.thikness = _thikness;
+                Paint -= new PaintEventHandler(fig.Print);
+                Paint += new PaintEventHandler(fig.Print);
+                Invalidate();
+            } 
         }
 
         private void fMain_Click(object sender, EventArgs e)
@@ -39,73 +41,75 @@ namespace Laba1
                     fig.Add(point);
                 }
 
-                Paint -= new PaintEventHandler(fig.Print);
-                Paint += new PaintEventHandler(fig.Print);
-                Invalidate();
+                print();           
             }
         }
-
 
         private void отрезокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Section();
-            _list.Add(fig);
         }
 
         private void ломанаяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Polyline();
-            _list.Add(fig);
         }
 
         private void прямоугольникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Rectangle();
-            _list.Add(fig);
         }
 
         private void многоугольникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Polygon();
-            _list.Add(fig);
         }
 
         private void эллипсToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fig = new Ellipse();
-            _list.Add(fig);
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                fig.color = colorDialog.Color;
-            }
         }
 
         private void toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fig != null) fig.thikness = 1;
+            _thikness = 1;
+            print();
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (fig != null) fig.thikness = 2;
+            _thikness = 2;
+            print();
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            if (fig != null) fig.thikness = 3;
+            _thikness = 3;
+            print();
         }
 
         private void однороднаяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            colorDialog.ShowDialog();
+            colorDialogFilling.ShowDialog();
+            print();
         }
 
-        private void fMain_Load(object sender, EventArgs e)
+        private void сплошнойЦветToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            colorDialogBorder.ShowDialog();
+            print();
+        }
+
+        private void безЗаливкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialogFilling.Color = Color.Transparent;
+            print();
+        }
+
+        private void безToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialogBorder.Color = Color.Transparent;
+            print();
         }
     }
 }

@@ -63,6 +63,46 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_horizontal_line_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-horizontal-line-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_horizontal_line_16__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-horizontal-line-16 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_horizontal_line_16__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-horizontal-line-16 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_horizontal_line_161 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-horizontal-line-161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-16", resourceCulture);
@@ -73,9 +113,9 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_заливка_16 {
+        internal static System.Drawing.Bitmap icons8_квадрат_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-заливка-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-квадрат-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +123,9 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия_24 {
+        internal static System.Drawing.Bitmap icons8_крестик_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-линия-24", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-крестик-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,39 +133,9 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия1_16 {
+        internal static System.Drawing.Bitmap icons8_линия_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-линия1-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия2_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-линия2-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия2_161 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-линия2-161", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия3_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-линия3-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-линия-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +163,36 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_открыть_папку_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-открыть-папку-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_отменить_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-отменить-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_повторить_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-повторить-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_прямоугольник_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-прямоугольник-30", resourceCulture);
@@ -166,6 +206,16 @@ namespace Laba1.Properties {
         internal static System.Drawing.Bitmap icons8_разнообразие_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-разнообразие-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_сохранить_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-сохранить-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +246,6 @@ namespace Laba1.Properties {
         internal static System.Drawing.Bitmap icons8_цвет_16__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-цвет-16 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_шестерня_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-шестерня-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
