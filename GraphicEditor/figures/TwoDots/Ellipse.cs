@@ -5,13 +5,18 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Ellipse : TwoDotsFigure
+    public class Ellipse : TwoDotsFigure
     {
         public Ellipse(List<Point> points) : base(points)
         {
         }
         public Ellipse() : base()
         {
+        }
+
+        public override string name
+        {
+            get { return "Эллипс"; }
         }
 
         public override void Print(object sender, PaintEventArgs e)

@@ -4,13 +4,17 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Section : TwoDotsFigure
+    public class Section : TwoDotsFigure
     {
         public Section(List<Point> points) : base(points)
         {
         }
         public Section() : base()
         {
+        }
+        public override string name
+        {
+            get { return "Отрезок"; }
         }
 
         public override void Print(object sender, PaintEventArgs e)

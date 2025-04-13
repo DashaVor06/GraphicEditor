@@ -5,13 +5,17 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Rectangle : TwoDotsFigure
+    public class Rectangle : TwoDotsFigure
     {
         public Rectangle(List<Point> points) : base(points)
         {
         }
         public Rectangle() : base()
         {
+        }
+        public override string name
+        {
+            get { return "Прямоугольник"; }
         }
 
         public override void Print(object sender, PaintEventArgs e)

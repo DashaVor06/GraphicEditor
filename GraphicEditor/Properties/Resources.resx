@@ -124,14 +124,8 @@
   <data name="icons8-horizontal-line-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-horizontal-line-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-прямоугольник-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pictures\icons8-прямоугольник-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-цвет-16 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-цвет-16 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-многоугольник-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pictures\icons8-многоугольник-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-сохранить-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-сохранить-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,9 +151,6 @@
   <data name="icons8-повторить-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-повторить-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-ломаная-кривая-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pictures\icons8-ломаная-кривая-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-крестик-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-крестик-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,13 +160,7 @@
   <data name="icons8-horizontal-line-161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-horizontal-line-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-эллипс-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pictures\icons8-эллипс-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-horizontal-line-16 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pictures\icons8-horizontal-line-16 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-линия-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\pictures\icons8-линия-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

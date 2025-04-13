@@ -30,19 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.tstrMain = new System.Windows.Forms.ToolStrip();
-            this.colorDialogBorder = new System.Windows.Forms.ColorDialog();
-            this.colorDialogFilling = new System.Windows.Forms.ColorDialog();
             this.tstripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tstripFigures = new System.Windows.Forms.ToolStripDropDownButton();
-            this.отрезокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ломанаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.прямоугольникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.многоугольникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.эллипсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tstripThikness = new System.Windows.Forms.ToolStripDropDownButton();
             this.ооToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +46,8 @@
             this.tstripFilling = new System.Windows.Forms.ToolStripDropDownButton();
             this.безЗаливкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.однороднаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDialogBorder = new System.Windows.Forms.ColorDialog();
+            this.colorDialogFilling = new System.Windows.Forms.ColorDialog();
             this.tstrMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,10 +64,6 @@
             this.tstrMain.Size = new System.Drawing.Size(635, 25);
             this.tstrMain.TabIndex = 1;
             this.tstrMain.Text = "toolStrip1";
-            // 
-            // colorDialogFilling
-            // 
-            this.colorDialogFilling.Color = System.Drawing.Color.Transparent;
             // 
             // tstripMenu
             // 
@@ -117,57 +108,11 @@
             // 
             // tstripFigures
             // 
-            this.tstripFigures.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.отрезокToolStripMenuItem,
-            this.ломанаяToolStripMenuItem,
-            this.прямоугольникToolStripMenuItem,
-            this.многоугольникToolStripMenuItem,
-            this.эллипсToolStripMenuItem});
             this.tstripFigures.Image = ((System.Drawing.Image)(resources.GetObject("tstripFigures.Image")));
             this.tstripFigures.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tstripFigures.Name = "tstripFigures";
             this.tstripFigures.Size = new System.Drawing.Size(79, 22);
             this.tstripFigures.Text = "Фигуры";
-            // 
-            // отрезокToolStripMenuItem
-            // 
-            this.отрезокToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_линия_16;
-            this.отрезокToolStripMenuItem.Name = "отрезокToolStripMenuItem";
-            this.отрезокToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.отрезокToolStripMenuItem.Text = "Отрезок";
-            this.отрезокToolStripMenuItem.Click += new System.EventHandler(this.отрезокToolStripMenuItem_Click);
-            // 
-            // ломанаяToolStripMenuItem
-            // 
-            this.ломанаяToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ломанаяToolStripMenuItem.Image")));
-            this.ломанаяToolStripMenuItem.Name = "ломанаяToolStripMenuItem";
-            this.ломанаяToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.ломанаяToolStripMenuItem.Text = "Ломаная";
-            this.ломанаяToolStripMenuItem.Click += new System.EventHandler(this.ломанаяToolStripMenuItem_Click);
-            // 
-            // прямоугольникToolStripMenuItem
-            // 
-            this.прямоугольникToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("прямоугольникToolStripMenuItem.Image")));
-            this.прямоугольникToolStripMenuItem.Name = "прямоугольникToolStripMenuItem";
-            this.прямоугольникToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.прямоугольникToolStripMenuItem.Text = "Прямоугольник";
-            this.прямоугольникToolStripMenuItem.Click += new System.EventHandler(this.прямоугольникToolStripMenuItem_Click);
-            // 
-            // многоугольникToolStripMenuItem
-            // 
-            this.многоугольникToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("многоугольникToolStripMenuItem.Image")));
-            this.многоугольникToolStripMenuItem.Name = "многоугольникToolStripMenuItem";
-            this.многоугольникToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.многоугольникToolStripMenuItem.Text = "Многоугольник";
-            this.многоугольникToolStripMenuItem.Click += new System.EventHandler(this.многоугольникToolStripMenuItem_Click);
-            // 
-            // эллипсToolStripMenuItem
-            // 
-            this.эллипсToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("эллипсToolStripMenuItem.Image")));
-            this.эллипсToolStripMenuItem.Name = "эллипсToolStripMenuItem";
-            this.эллипсToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.эллипсToolStripMenuItem.Text = "Эллипс";
-            this.эллипсToolStripMenuItem.Click += new System.EventHandler(this.эллипсToolStripMenuItem_Click);
             // 
             // tstripThikness
             // 
@@ -220,7 +165,7 @@
             // 
             this.безToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("безToolStripMenuItem.Image")));
             this.безToolStripMenuItem.Name = "безToolStripMenuItem";
-            this.безToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.безToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.безToolStripMenuItem.Text = "Без контура";
             this.безToolStripMenuItem.Click += new System.EventHandler(this.безToolStripMenuItem_Click);
             // 
@@ -228,7 +173,7 @@
             // 
             this.сплошнойЦветToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сплошнойЦветToolStripMenuItem.Image")));
             this.сплошнойЦветToolStripMenuItem.Name = "сплошнойЦветToolStripMenuItem";
-            this.сплошнойЦветToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сплошнойЦветToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.сплошнойЦветToolStripMenuItem.Text = "Сплошной цвет";
             this.сплошнойЦветToolStripMenuItem.Click += new System.EventHandler(this.сплошнойЦветToolStripMenuItem_Click);
             // 
@@ -245,19 +190,23 @@
             // 
             // безЗаливкиToolStripMenuItem
             // 
-            this.безЗаливкиToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_крестик_16;
+            this.безЗаливкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("безЗаливкиToolStripMenuItem.Image")));
             this.безЗаливкиToolStripMenuItem.Name = "безЗаливкиToolStripMenuItem";
-            this.безЗаливкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.безЗаливкиToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.безЗаливкиToolStripMenuItem.Text = "Без заливки";
             this.безЗаливкиToolStripMenuItem.Click += new System.EventHandler(this.безЗаливкиToolStripMenuItem_Click);
             // 
             // однороднаяToolStripMenuItem
             // 
-            this.однороднаяToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_квадрат_16;
+            this.однороднаяToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("однороднаяToolStripMenuItem.Image")));
             this.однороднаяToolStripMenuItem.Name = "однороднаяToolStripMenuItem";
-            this.однороднаяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.однороднаяToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.однороднаяToolStripMenuItem.Text = "Сплошной цвет";
             this.однороднаяToolStripMenuItem.Click += new System.EventHandler(this.однороднаяToolStripMenuItem_Click);
+            // 
+            // colorDialogFilling
+            // 
+            this.colorDialogFilling.Color = System.Drawing.Color.Transparent;
             // 
             // fMain
             // 
@@ -269,6 +218,7 @@
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.Click += new System.EventHandler(this.fMain_Click);
             this.tstrMain.ResumeLayout(false);
             this.tstrMain.PerformLayout();
@@ -281,11 +231,6 @@
 
         private System.Windows.Forms.ToolStrip tstrMain;
         private System.Windows.Forms.ToolStripDropDownButton tstripFigures;
-        private System.Windows.Forms.ToolStripMenuItem отрезокToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ломанаяToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem прямоугольникToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem многоугольникToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem эллипсToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton tstripMenu;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;

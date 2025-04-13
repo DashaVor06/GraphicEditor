@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    internal class Polygon : ManyDotsFigure
+    public class Polygon : ManyDotsFigure
     {
         public Polygon(List<Point> points) : base(points)
         {
@@ -12,6 +12,11 @@ namespace Laba1
 
         public Polygon() : base()
         {
+        }
+
+        public override string name
+        {
+            get { return "Многоугольник"; }
         }
 
         public override void Print(object sender, PaintEventArgs e)

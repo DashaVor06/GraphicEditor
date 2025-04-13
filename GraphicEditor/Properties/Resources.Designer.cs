@@ -133,36 +133,6 @@ namespace Laba1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_линия_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-линия-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_ломаная_кривая_24 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-ломаная-кривая-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_многоугольник_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-многоугольник-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_открыть_папку_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-открыть-папку-16", resourceCulture);
@@ -186,16 +156,6 @@ namespace Laba1.Properties {
         internal static System.Drawing.Bitmap icons8_повторить_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-повторить-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_прямоугольник_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-прямоугольник-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,16 +206,6 @@ namespace Laba1.Properties {
         internal static System.Drawing.Bitmap icons8_цвет_16__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-цвет-16 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_эллипс_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-эллипс-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

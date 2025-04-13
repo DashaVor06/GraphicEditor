@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Laba1
 {
@@ -45,29 +48,35 @@ namespace Laba1
             }
         }
 
-        private void отрезокToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fig = new Section();
+        private void getClasses()
+        {         
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Type[] types = assembly.GetTypes();
+
+            foreach (Type type in types)
+            {
+                if (type.IsClass && (type.IsSubclassOf(typeof(TwoDotsFigure)) || type.IsSubclassOf(typeof(ManyDotsFigure))))
+                {
+                    PropertyInfo name = type.GetProperty("name", BindingFlags.Public | BindingFlags.Instance);
+                    var tempInstance = Activator.CreateInstance(type);
+                    string fieldNameValue = name.GetValue(tempInstance) as string;
+                    ToolStripMenuItem newButton = new ToolStripMenuItem(fieldNameValue);
+                    newButton.Click += (sender, e) =>
+                    {
+                        var newFig = Activator.CreateInstance(type) as dynamic;
+                        fig = newFig;
+                    };
+                    newButton.Image = Image.FromFile(Path.Combine(Directory.GetCurrentDirectory(), "pictures", fieldNameValue + ".png"));
+
+                    tstripFigures.DropDownItems.Add(newButton);
+                }
+                    
+            }
         }
 
-        private void ломанаяToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fMain_Load(object sender, EventArgs e)
         {
-            fig = new Polyline();
-        }
-
-        private void прямоугольникToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fig = new Rectangle();
-        }
-
-        private void многоугольникToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fig = new Polygon();
-        }
-
-        private void эллипсToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fig = new Ellipse();
+            getClasses();
         }
 
         private void toolStripMenuItem_Click(object sender, EventArgs e)

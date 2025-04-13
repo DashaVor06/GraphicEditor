@@ -14,13 +14,14 @@ namespace Laba1
             this.points = points;
         }
 
-        public Figure() : this(new List<Point>()) 
-        { 
+        public Figure() : this(new List<Point>())
+        {
         }
 
         public int thikness { get; set; }
         public List<Point> points { get; set; }
         public Color border { get; set; }
         public Color filling { get; set; }
+        public abstract string name { get; }
     }
 }
