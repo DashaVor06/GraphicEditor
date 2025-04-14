@@ -219,7 +219,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графический редактор";
             this.Load += new System.EventHandler(this.fMain_Load);
-            this.Click += new System.EventHandler(this.fMain_Click);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.fMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.fMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.fMain_MouseUp);
             this.tstrMain.ResumeLayout(false);
             this.tstrMain.PerformLayout();
             this.ResumeLayout(false);

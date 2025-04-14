@@ -11,6 +11,7 @@ namespace Laba1
     {
         private Figure fig = null;
         private int _thikness = 2;
+        private bool _down = false;
         
         public fMain()
         {
@@ -30,7 +31,7 @@ namespace Laba1
             } 
         }
 
-        private void fMain_Click(object sender, EventArgs e)
+        private void addPoint()
         {
             if (fig != null)
             {
@@ -44,7 +45,7 @@ namespace Laba1
                     fig.Add(point);
                 }
 
-                print();           
+                print();   
             }
         }
 
@@ -119,6 +120,28 @@ namespace Laba1
         {
             colorDialogBorder.Color = Color.Transparent;
             print();
+        }
+
+        private void fMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            _down = false;
+        }
+
+        private void fMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_down && fig != null)
+            {
+                Point point = this.PointToClient(Cursor.Position);
+                fig.points[fig.points.Count - 1] = point;
+                print();
+            }
+        }
+
+        private void fMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            _down = true;
+            addPoint();
+            if (fig.points.Count == 1) addPoint();
         }
     }
 }

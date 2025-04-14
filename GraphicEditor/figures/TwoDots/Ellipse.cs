@@ -31,8 +31,8 @@ namespace Laba1
                 {
                     using (Brush brush = new SolidBrush(this.filling))
                     {
-                        e.Graphics.FillEllipse(brush, points[0].X, points[0].Y, width, height);
-                        e.Graphics.DrawEllipse(pen, points[0].X, points[0].Y, width, height);
+                        e.Graphics.FillEllipse(brush, Math.Min(points[0].X, points[1].X), Math.Min(points[0].Y, points[1].Y), width, height);
+                        e.Graphics.DrawEllipse(pen, Math.Min(points[0].X, points[1].X), Math.Min(points[0].Y, points[1].Y), width, height);
                     }
                         
                 }

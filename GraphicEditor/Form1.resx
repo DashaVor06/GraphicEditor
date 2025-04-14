@@ -210,7 +210,7 @@
   <data name="безToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAGxJREFUOE/dkUsKgDAMBQN6/yuIutGjeQp9Iy1kIYlSN/pgSMiPNLV/qi/2SlHu
+        DAAACwwBP0AiyAAAAGxJREFUOE/dkUsKgDAMBQN6/yuIutGjeQp9Iy1kIYlSN/pgSMiPNLV/qi/2SlHu
         FAWbGERHoAifGLl0CIW7mAWNgE+MXCrfgPW+3yoUhaOgERaRru7FgEnUAau4PaD5CU1HfOUbo4JHh/yE
         zA4FQR8b1wdSRQAAAABJRU5ErkJggg==
 </value>
@@ -218,7 +218,7 @@
   <data name="сплошнойЦветToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAGdJREFUOE/dkjkOgDAMBP0ZyH9A5D1B8G5gt6DBa0uIAsRI08RXLvskBQ5wusg1
+        DQAACw0B7QfALAAAAGdJREFUOE/dkjkOgDAMBP0ZyH9A5D1B8G5gt6DBa0uIAsRI08RXLvskBQ5wusg1
         xlJWuME9kLEFSnqYFZ8yh7kOblEVKEfo4DlVsrJCxw8aPL7EO8/YQckMsyaMNZjC7tFXDie/hdkBPVtq
         tt0U2kkAAAAASUVORK5CYII=
 </value>
@@ -237,7 +237,7 @@
   <data name="безЗаливкиToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAGxJREFUOE/dkUsKgDAMBQN6/yuIutGjeQp9Iy1kIYlSN/pgSMiPNLV/qi/2SlHu
+        DgAACw4BQL7hQQAAAGxJREFUOE/dkUsKgDAMBQN6/yuIutGjeQp9Iy1kIYlSN/pgSMiPNLV/qi/2SlHu
         FAWbGERHoAifGLl0CIW7mAWNgE+MXCrfgPW+3yoUhaOgERaRru7FgEnUAau4PaD5CU1HfOUbo4JHh/yE
         zA4FQR8b1wdSRQAAAABJRU5ErkJggg==
 </value>
@@ -245,7 +245,7 @@
   <data name="однороднаяToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAGdJREFUOE/dkjkOgDAMBP0ZyH9A5D1B8G5gt6DBa0uIAsRI08RXLvskBQ5wusg1
+        DgAACw4BQL7hQQAAAGdJREFUOE/dkjkOgDAMBP0ZyH9A5D1B8G5gt6DBa0uIAsRI08RXLvskBQ5wusg1
         xlJWuME9kLEFSnqYFZ8yh7kOblEVKEfo4DlVsrJCxw8aPL7EO8/YQckMsyaMNZjC7tFXDie/hdkBPVtq
         tt0U2kkAAAAASUVORK5CYII=
 </value>
