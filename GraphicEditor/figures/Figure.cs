@@ -6,14 +6,8 @@ namespace Laba1
 {
     public abstract class Figure
     {
-        public abstract void Print(object sender, PaintEventArgs e);
+        public virtual void Print(object sender, PaintEventArgs e) { }
         public abstract int Add(Point point);
-
-        public void Delete(Point point)
-        {
-            points.Remove(point);
-        }
-
 
         public Figure(List<Point> points)
         {

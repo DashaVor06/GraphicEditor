@@ -6,17 +6,6 @@ namespace Laba1
 {
     public abstract class TwoDotsFigure: Figure
     {
-        public TwoDotsFigure(List<Point> points) : base(points)
-        {
-        }
-        public TwoDotsFigure() : base()
-        {
-        }
-
-        public override void Print(object sender, PaintEventArgs e)
-        {
-        }
-
         public override int Add(Point point)
         {
             {

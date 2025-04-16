@@ -7,12 +7,6 @@ namespace Laba1
 {
     public class Rectangle : TwoDotsFigure
     {
-        public Rectangle(List<Point> points) : base(points)
-        {
-        }
-        public Rectangle() : base()
-        {
-        }
         public override string name
         {
             get { return "Прямоугольник"; }

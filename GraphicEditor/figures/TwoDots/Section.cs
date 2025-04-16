@@ -6,12 +6,6 @@ namespace Laba1
 {
     public class Section : TwoDotsFigure
     {
-        public Section(List<Point> points) : base(points)
-        {
-        }
-        public Section() : base()
-        {
-        }
         public override string name
         {
             get { return "Отрезок"; }

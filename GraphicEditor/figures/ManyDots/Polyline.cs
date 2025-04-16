@@ -6,13 +6,6 @@ namespace Laba1
 {
     public class Polyline : ManyDotsFigure
     {
-        public Polyline(List<Point> points) : base(points)
-        {
-        }
-        public Polyline() : base()
-        {
-        }
-
         public override string name
         {
             get { return "Ломаная"; }

@@ -142,7 +142,7 @@ namespace Laba1
         {
             _down = true;
             addPoint();
-            if (fig.points.Count == 1) addPoint();
+            if (fig != null && fig.points.Count == 1) addPoint();
         }
     }
 }

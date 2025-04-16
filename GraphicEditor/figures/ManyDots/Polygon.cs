@@ -6,14 +6,6 @@ namespace Laba1
 {
     public class Polygon : ManyDotsFigure
     {
-        public Polygon(List<Point> points) : base(points)
-        {
-        }
-
-        public Polygon() : base()
-        {
-        }
-
         public override string name
         {
             get { return "Многоугольник"; }
