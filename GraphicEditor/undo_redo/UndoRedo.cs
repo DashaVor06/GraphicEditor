@@ -8,7 +8,7 @@ namespace Laba1.undo
 {
     public class UndoRedo
     {
-        private void undo() { }
-        private void redo() { }
+        public void undo() { }
+        public void redo() { }
     }
 }
