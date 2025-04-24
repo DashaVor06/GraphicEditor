@@ -46,25 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="figures\TwoDots\Ellipse.cs" />
-    <Compile Include="figures\Figure.cs" />
+    <Compile Include="Figures\TwoDots\Ellipse.cs" />
+    <Compile Include="Figures\Figure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="plugins\PluginLoader.cs" />
-    <Compile Include="figures\ManyDots\Polygon.cs" />
-    <Compile Include="figures\ManyDots\Polyline.cs" />
-    <Compile Include="figures\ManyDotsFigure.cs" />
+    <Compile Include="Plugins\PluginLoader.cs" />
+    <Compile Include="Figures\ManyDots\Polygon.cs" />
+    <Compile Include="Figures\ManyDots\Polyline.cs" />
+    <Compile Include="Figures\ManyDotsFigure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="figures\TwoDots\Rectangle.cs" />
-    <Compile Include="figures\TwoDots\Section.cs" />
-    <Compile Include="figures\TwoDotsFigure.cs" />
-    <Compile Include="serialization_deserialization\SerializationDeserialization.cs" />
-    <Compile Include="undo_redo\UndoRedo.cs" />
+    <Compile Include="Figures\TwoDots\Rectangle.cs" />
+    <Compile Include="Figures\TwoDots\Section.cs" />
+    <Compile Include="Figures\TwoDotsFigure.cs" />
+    <Compile Include="SerializationDeserialization\SerializationDeserialization.cs" />
+    <Compile Include="UndoRedo\UndoRedo.cs" />
+    <Compile Include="UploadClasses\UploadClasses.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,83 +93,83 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-линия-24.png" />
+    <None Include="Pictures\icons8-линия-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-ломаная-кривая-24.png" />
+    <None Include="Pictures\icons8-ломаная-кривая-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-прямоугольник-30.png" />
+    <None Include="Pictures\icons8-прямоугольник-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-многоугольник-30.png" />
+    <None Include="Pictures\icons8-многоугольник-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-эллипс-30.png" />
+    <None Include="Pictures\icons8-эллипс-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-толщина-линии-16.png" />
+    <None Include="Pictures\icons8-толщина-линии-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-заливка-16.png" />
+    <None Include="Pictures\icons8-заливка-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-цвет-16.png" />
+    <None Include="Pictures\icons8-цвет-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-цвет-16 %281%29.png" />
+    <None Include="Pictures\icons8-цвет-16 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-разнообразие-16.png" />
+    <None Include="Pictures\icons8-разнообразие-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-шестерня-16.png" />
+    <None Include="Pictures\icons8-шестерня-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-settings-16.png" />
+    <None Include="Pictures\icons8-settings-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-линия1-16.png" />
+    <None Include="Pictures\icons8-линия1-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-линия2-16.png" />
+    <None Include="Pictures\icons8-линия2-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-линия3-16.png" />
+    <None Include="Pictures\icons8-линия3-16.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="pictures\icons8-сохранить-16.png" />
+    <None Include="Pictures\icons8-сохранить-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-открыть-во-всплывающем-окне-16.png" />
+    <None Include="Pictures\icons8-открыть-во-всплывающем-окне-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-отменить-16.png" />
+    <None Include="Pictures\icons8-отменить-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-повторить-16.png" />
+    <None Include="Pictures\icons8-повторить-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-открыть-папку-16.png" />
+    <None Include="Pictures\icons8-открыть-папку-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-крестик-16.png" />
+    <None Include="Pictures\icons8-крестик-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-квадрат-16.png" />
+    <None Include="Pictures\icons8-квадрат-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-horizontal-line-16.png" />
+    <None Include="Pictures\icons8-horizontal-line-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-horizontal-line-16 %281%29.png" />
+    <None Include="Pictures\icons8-horizontal-line-16 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-horizontal-line-16 %282%29.png" />
+    <None Include="Pictures\icons8-horizontal-line-16 %282%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pictures\icons8-линия-16.png" />
+    <None Include="Pictures\icons8-линия-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
