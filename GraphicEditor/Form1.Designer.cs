@@ -82,29 +82,31 @@
             // 
             this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьToolStripMenuItem.Image")));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             // 
             // отменаToolStripMenuItem
             // 
             this.отменаToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("отменаToolStripMenuItem.Image")));
             this.отменаToolStripMenuItem.Name = "отменаToolStripMenuItem";
-            this.отменаToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.отменаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.отменаToolStripMenuItem.Text = "Отменить";
+            this.отменаToolStripMenuItem.Click += new System.EventHandler(this.отменаToolStripMenuItem_Click);
             // 
             // вернутьToolStripMenuItem
             // 
             this.вернутьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("вернутьToolStripMenuItem.Image")));
             this.вернутьToolStripMenuItem.Name = "вернутьToolStripMenuItem";
-            this.вернутьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.вернутьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.вернутьToolStripMenuItem.Text = "Вернуть";
+            this.вернутьToolStripMenuItem.Click += new System.EventHandler(this.вернутьToolStripMenuItem_Click);
             // 
             // tstripFigures
             // 

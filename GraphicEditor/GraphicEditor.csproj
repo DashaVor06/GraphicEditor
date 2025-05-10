@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UndoRedo\ListFigures.cs" />
     <Compile Include="Plugins\PluginLoader.cs" />
     <Compile Include="Figures\ManyDots\Polygon.cs" />
     <Compile Include="Figures\ManyDots\Polyline.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="Figures\TwoDots\Section.cs" />
     <Compile Include="Figures\TwoDotsFigure.cs" />
     <Compile Include="SerializationDeserialization\SerializationDeserialization.cs" />
-    <Compile Include="UndoRedo\UndoRedo.cs" />
     <Compile Include="UploadClasses\UploadClasses.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

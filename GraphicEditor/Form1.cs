@@ -6,9 +6,9 @@ namespace Laba1
 {
     public partial class fMain : Form
     {
-        private Figure _fig = null;
         private int _thikness = 2;
         private bool _down = false;
+        public ListFigures ListFigures = new ListFigures();
         
         public fMain()
         {
@@ -17,29 +17,31 @@ namespace Laba1
 
         private void print()
         {
-            if (_fig != null)
+            if (ListFigures.Current != null)
             {
-                _fig.border = colorDialogBorder.Color;
-                _fig.filling = colorDialogFilling.Color;
-                _fig.thikness = _thikness;
-                Paint -= new PaintEventHandler(_fig.Print);
-                Paint += new PaintEventHandler(_fig.Print);
+                ListFigures.Current.border = colorDialogBorder.Color;
+                ListFigures.Current.filling = colorDialogFilling.Color;
+                ListFigures.Current.thikness = _thikness;
+                Paint -= new PaintEventHandler(ListFigures.Current.Print);
+                Paint += new PaintEventHandler(ListFigures.Current.Print);
                 Invalidate();
             } 
         }
 
         private void addPoint()
         {
-            if (_fig != null)
+            if (ListFigures.Current != null)
             {
                 Point Point = this.PointToClient(Cursor.Position);
-                int Err = _fig.Add(Point);
+                int Err = ListFigures.Current.Add(Point);
+                ListFigures.Change();
 
                 if (Err != 0)
                 {
-                    var NewFig = Activator.CreateInstance(_fig.GetType()) as dynamic;
-                    _fig = NewFig;
-                    _fig.Add(Point);
+                    var NewFig = Activator.CreateInstance(ListFigures.Current.GetType()) as dynamic;
+                    ListFigures.Current = NewFig;
+                    ListFigures.Current.Add(Point);
+                    ListFigures.Add();
                 }
 
                 print();   
@@ -48,7 +50,7 @@ namespace Laba1
         
         private void fMain_Load(object sender, EventArgs e)
         {
-            UploadClasses.getClasses(_fig, tstripFigures);
+            UploadClasses.getClasses(this, tstripFigures, ListFigures);
         }
 
         private void toolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,10 +96,10 @@ namespace Laba1
         }
         private void fMain_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_down && _fig != null)
+            if (_down && ListFigures.Current != null)
             {
-                Point Point = this.PointToClient(Cursor.Position);
-                _fig.points[_fig.points.Count - 1] = Point;
+                Point Point = PointToClient(Cursor.Position);
+                ListFigures.Current.points[ListFigures.Current.points.Count - 1] = Point;
                 print();
             }
         }
@@ -105,7 +107,20 @@ namespace Laba1
         {
             _down = true;
             addPoint();
-            if (_fig != null && _fig.points.Count == 1) addPoint();
+            if (ListFigures.Current != null)
+            {
+                if (ListFigures.Current.points.Count == 1) addPoint();
+            }
+        }
+
+        private void отменаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListFigures.Undo(this);
+        }
+
+        private void вернутьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListFigures.Redo(this);
         }
     }
 }

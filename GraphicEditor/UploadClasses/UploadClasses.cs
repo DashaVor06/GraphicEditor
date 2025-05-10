@@ -8,7 +8,7 @@ namespace Laba1
 {
     public static class UploadClasses
     {
-        public static void getClasses(Figure fig, ToolStripDropDownButton tstripFigures)
+        public static void getClasses(fMain form, ToolStripDropDownButton tstripFigures, ListFigures ListFigures)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type[] types = assembly.GetTypes();
@@ -24,7 +24,8 @@ namespace Laba1
                     newButton.Click += (sender, e) =>
                     {
                         var newFig = Activator.CreateInstance(type) as dynamic;
-                        fig = newFig;
+                        ListFigures.Current = newFig;
+                        ListFigures.Add();
                     };
                     string folderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "pictures"));
                     string filePath = Path.Combine(folderPath, $"{fieldNameValue}.png");
