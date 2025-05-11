@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Laba1
 {
     public class ListFigures
     {
-        private List<Figure> ListUndo { get; set; }
+        public List<Figure> ListUndo { get; set; }
         public List<Figure> ListRedo { get; set; }
         public Figure Current {  get; set; }
 
@@ -19,7 +20,7 @@ namespace Laba1
             Current = null;
         }
 
-        public void Add()
+        public void AddFigure()
         {
             if (Current != null)
             {
@@ -28,9 +29,57 @@ namespace Laba1
             }
         }
 
+        public void AddPoint(fMain form)
+        {
+            if (Current != null)
+            {
+                Point Point = form.PointToClient(Cursor.Position);
+                int Err = Current.Add(Point);
+                Change();
+
+                if (Err != 0)
+                {
+                    var NewFig = Activator.CreateInstance(Current.GetType()) as dynamic;
+                    Current = NewFig;
+                    Current.Add(Point);
+                    AddFigure();
+                }
+
+                PrintCurrent(form);
+            }
+        }
+
         public void Change()
         {
             ListUndo[ListUndo.Count - 1] = Current;
+        }
+
+        public void ClearList(fMain form)
+        {
+            foreach (Figure f in ListUndo)
+            {
+                form.Paint -= new PaintEventHandler(f.Print);
+            }
+            form.Invalidate();
+        }
+
+        public void PrintList(fMain form)
+        {
+            foreach (Figure f in ListUndo)
+            {
+                form.Paint += new PaintEventHandler(f.Print);
+            }
+            form.Invalidate();
+        }
+
+        public void PrintCurrent(fMain form)
+        {
+            if (Current != null)
+            {
+                form.Paint -= new PaintEventHandler(Current.Print);
+                form.Paint += new PaintEventHandler(Current.Print);
+                form.Invalidate();
+            }
         }
 
         public void Undo(fMain form)

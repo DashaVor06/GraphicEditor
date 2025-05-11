@@ -1,0 +1,1 @@
+{"$type":"System.Collections.Generic.List`1[[Laba1.Figure, Laba1]], mscorlib","$values":[{"$type":"Laba1.Polygon, Laba1","name":"Многоугольник","thikness":2,"points":{"$type":"System.Collections.Generic.List`1[[System.Drawing.Point, System.Drawing]], mscorlib","$values":["74, 147","141, 108","225, 64","217, 207","111, 207"]},"border":"Black","filling":"Transparent"}]}

@@ -8,7 +8,7 @@ namespace Laba1
 {
     public static class UploadClasses
     {
-        public static void getClasses(fMain form, ToolStripDropDownButton tstripFigures, ListFigures ListFigures)
+        public static void getClasses(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type[] types = assembly.GetTypes();
@@ -25,12 +25,12 @@ namespace Laba1
                     {
                         var newFig = Activator.CreateInstance(type) as dynamic;
                         ListFigures.Current = newFig;
-                        ListFigures.Add();
+                        ListFigures.AddFigure();
                     };
                     string folderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "pictures"));
                     string filePath = Path.Combine(folderPath, $"{fieldNameValue}.png");
                     newButton.Image = Image.FromFile(filePath);
-                    tstripFigures.DropDownItems.Add(newButton);
+                    MenuItem.DropDownItems.Add(newButton);
                 }
 
             }

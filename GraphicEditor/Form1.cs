@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using Laba1.serialization;
 
 namespace Laba1
 {
@@ -15,112 +17,153 @@ namespace Laba1
             InitializeComponent();
         }
 
-        private void print()
-        {
-            if (ListFigures.Current != null)
-            {
-                ListFigures.Current.border = colorDialogBorder.Color;
-                ListFigures.Current.filling = colorDialogFilling.Color;
-                ListFigures.Current.thikness = _thikness;
-                Paint -= new PaintEventHandler(ListFigures.Current.Print);
-                Paint += new PaintEventHandler(ListFigures.Current.Print);
-                Invalidate();
-            } 
-        }
-
-        private void addPoint()
-        {
-            if (ListFigures.Current != null)
-            {
-                Point Point = this.PointToClient(Cursor.Position);
-                int Err = ListFigures.Current.Add(Point);
-                ListFigures.Change();
-
-                if (Err != 0)
-                {
-                    var NewFig = Activator.CreateInstance(ListFigures.Current.GetType()) as dynamic;
-                    ListFigures.Current = NewFig;
-                    ListFigures.Current.Add(Point);
-                    ListFigures.Add();
-                }
-
-                print();   
-            }
-        }
-        
         private void fMain_Load(object sender, EventArgs e)
         {
-            UploadClasses.getClasses(this, tstripFigures, ListFigures);
-        }
-
-        private void toolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _thikness = 1;
-            print();
-        }
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            _thikness = 2;
-            print();
-        }
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            _thikness = 3;
-            print();
-        }
-
-        private void однороднаяToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            colorDialogFilling.ShowDialog();
-            print();
-        }
-        private void сплошнойЦветToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            colorDialogBorder.ShowDialog();
-            print();
-        }
-        private void безЗаливкиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            colorDialogFilling.Color = Color.Transparent;
-            print();
-        }
-        private void безToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            colorDialogBorder.Color = Color.Transparent;
-            print();
+            UploadClasses.getClasses(this, фигурыToolStripMenuItem, ListFigures);
         }
 
         private void fMain_MouseUp(object sender, MouseEventArgs e)
         {
             _down = false;
         }
+        private void takeParams()
+        {
+            if (ListFigures.Current != null)
+            {
+                ListFigures.Current.thikness = _thikness;
+                ListFigures.Current.border = colorDialogBorder.Color;
+                ListFigures.Current.filling = colorDialogFilling.Color;
+            }
+        }
+
         private void fMain_MouseMove(object sender, MouseEventArgs e)
         {
             if (_down && ListFigures.Current != null)
             {
                 Point Point = PointToClient(Cursor.Position);
                 ListFigures.Current.points[ListFigures.Current.points.Count - 1] = Point;
-                print();
+                takeParams();
+                ListFigures.PrintCurrent(this);
             }
         }
         private void fMain_MouseDown(object sender, MouseEventArgs e)
         {
             _down = true;
-            addPoint();
+            ListFigures.AddPoint(this);
             if (ListFigures.Current != null)
             {
-                if (ListFigures.Current.points.Count == 1) addPoint();
+                if (ListFigures.Current.points.Count == 1) ListFigures.AddPoint(this);
             }
         }
 
-        private void отменаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveFunc()
+        {
+            DialogResult result = MessageBox.Show(
+                "У вас есть несохраненные изменения.\nСохранить перед выходом?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = Path.ChangeExtension(saveFileDialog.FileName, "json");
+                            SerializationDeserialization.serialize(ListFigures, filePath);
+                        }
+                    }
+                    break;
+                case DialogResult.No:
+                    break;
+            }            
+        }
+
+        private void fMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveFunc();
+        }
+
+        private void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFunc();
+        }
+
+        private void открытьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    saveFunc();
+                    ListFigures.ClearList(this);
+                    string filePath = openFileDialog.FileName;
+                    ListFigures = SerializationDeserialization.deserialize(ListFigures, filePath);
+                    ListFigures.PrintList(this);
+                }
+            }
+        }
+
+        private void отменитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListFigures.Undo(this);
         }
 
-        private void вернутьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void вернутьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ListFigures.Redo(this);
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            _thikness = 1;
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            _thikness = 2;
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            _thikness = 3;
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void безКонтураToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialogBorder.Color = Color.Transparent;
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void сплошнойЦветToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            colorDialogBorder.ShowDialog();
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void безЗаливкиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            colorDialogFilling.Color = Color.Transparent;
+            takeParams();
+            ListFigures.PrintCurrent(this);
+        }
+
+        private void сплошнойЦветToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            colorDialogFilling.ShowDialog();
+            takeParams();
+            ListFigures.PrintCurrent(this);
         }
     }
 }
