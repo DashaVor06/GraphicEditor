@@ -1,1 +1,0 @@
-{"$type":"System.Collections.Generic.List`1[[Laba1.Figure, Laba1]], mscorlib","$values":[{"$type":"Laba1.Polyline, Laba1","name":"Ломаная","thikness":2,"points":{"$type":"System.Collections.Generic.List`1[[System.Drawing.Point, System.Drawing]], mscorlib","$values":["80, 86","146, 180","364, 98","224, 304","484, 220"]},"border":"Black","filling":"Transparent"}]}
