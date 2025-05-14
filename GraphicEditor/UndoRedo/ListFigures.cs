@@ -51,7 +51,8 @@ namespace Laba1
 
         public void Change()
         {
-            ListUndo[ListUndo.Count - 1] = Current;
+            if (ListUndo.Count > 0)
+                ListUndo[ListUndo.Count - 1] = Current;
         }
 
         public void ClearList(fMain form)

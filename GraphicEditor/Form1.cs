@@ -38,7 +38,7 @@ namespace Laba1
             }
         }
 
-        private void fMain_MouseMove(object sender, MouseEventArgs e)
+        private void mouseMove()
         {
             if (_down && ListFigures.Current != null)
             {
@@ -49,14 +49,17 @@ namespace Laba1
             }
         }
 
+        private void fMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseMove();
+        }
+
         private void fMain_MouseDown(object sender, MouseEventArgs e)
         {
             _down = true;
             ListFigures.AddPoint(this);
-            if (ListFigures.Current != null)
-            {
-                if (ListFigures.Current.points.Count == 1) ListFigures.AddPoint(this);
-            }
+            mouseMove();
+            //if (ListFigures.Current.points.Count == 1 && ListFigures.Current.pointsCount == 2) ListFigures.AddPoint(this);    
         }
 
         private void saveFunc()
