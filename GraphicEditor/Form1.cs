@@ -19,7 +19,9 @@ namespace Laba1
 
         private void fMain_Load(object sender, EventArgs e)
         {
-            UploadClasses.getClasses(this, фигурыToolStripMenuItem, ListFigures);
+            Loader.AddPluginBtn(this, фигурыToolStripMenuItem, ListFigures);
+            Loader.LoadClasses(this, фигурыToolStripMenuItem, ListFigures);
+            Loader.LoadPlugins(this, фигурыToolStripMenuItem, ListFigures);    
         }
 
         private void fMain_MouseUp(object sender, MouseEventArgs e)
@@ -46,6 +48,7 @@ namespace Laba1
                 ListFigures.PrintCurrent(this);
             }
         }
+
         private void fMain_MouseDown(object sender, MouseEventArgs e)
         {
             _down = true;
@@ -64,22 +67,15 @@ namespace Laba1
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
-
             switch (result)
             {
                 case DialogResult.Yes:
-                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-                    {
-                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            string filePath = Path.ChangeExtension(saveFileDialog.FileName, "json");
-                            SerializationDeserialization.serialize(ListFigures, filePath);
-                        }
-                    }
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        SerializationDeserialization.serialize(ListFigures, saveFileDialog.FileName);
                     break;
                 case DialogResult.No:
                     break;
-            }            
+            }
         }
 
         private void fMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -89,21 +85,19 @@ namespace Laba1
 
         private void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            saveFunc();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                SerializationDeserialization.serialize(ListFigures, saveFileDialog.FileName);
         }
 
         private void открытьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    saveFunc();
-                    ListFigures.ClearList(this);
-                    string filePath = openFileDialog.FileName;
-                    ListFigures = SerializationDeserialization.deserialize(ListFigures, filePath);
-                    ListFigures.PrintList(this);
-                }
+                saveFunc();
+                ListFigures.ClearList(this);
+                string filePath = openFileDialog.FileName;
+                ListFigures = SerializationDeserialization.deserialize(ListFigures, filePath);
+                ListFigures.PrintList(this);
             }
         }
 

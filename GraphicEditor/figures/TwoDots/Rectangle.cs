@@ -5,12 +5,10 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    public class Rectangle : TwoDotsFigure
+    public class Rectangle : Figure
     {
-        public override string name
-        {
-            get { return "Прямоугольник"; }
-        }
+        public override int pointsCount => 2;
+        public override string name => "Прямоугольник";
 
         public override void Print(object sender, PaintEventArgs e)
         {

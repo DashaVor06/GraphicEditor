@@ -4,12 +4,10 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    public class Polyline : ManyDotsFigure
+    public class Polyline : Figure
     {
-        public override string name
-        {
-            get { return "Ломаная"; }
-        }
+        public override int pointsCount => 0;
+        public override string name => "Ломаная";
 
         public override void Print(object sender, PaintEventArgs e)
         {

@@ -61,14 +61,12 @@
     <Compile Include="Plugins\PluginLoader.cs" />
     <Compile Include="Figures\ManyDots\Polygon.cs" />
     <Compile Include="Figures\ManyDots\Polyline.cs" />
-    <Compile Include="Figures\ManyDotsFigure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\TwoDots\Rectangle.cs" />
     <Compile Include="Figures\TwoDots\Section.cs" />
-    <Compile Include="Figures\TwoDotsFigure.cs" />
     <Compile Include="SerializationDeserialization\SerializationDeserialization.cs" />
-    <Compile Include="UploadClasses\UploadClasses.cs" />
+    <Compile Include="Loader\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

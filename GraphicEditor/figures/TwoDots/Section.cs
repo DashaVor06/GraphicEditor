@@ -4,12 +4,10 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    public class Section : TwoDotsFigure
+    public class Section : Figure
     {
-        public override string name
-        {
-            get { return "Отрезок"; }
-        }
+        public override int pointsCount => 2;
+        public override string name => "Отрезок";
 
         public override void Print(object sender, PaintEventArgs e)
         {

@@ -5,12 +5,10 @@ using System.Windows.Forms;
 
 namespace Laba1
 {
-    public class Ellipse : TwoDotsFigure
+    public class Ellipse : Figure
     {
-        public override string name
-        {
-            get { return "Эллипс"; }
-        }
+        public override int pointsCount => 2;
+        public override string name => "Эллипс";
 
         public override void Print(object sender, PaintEventArgs e)
         {
