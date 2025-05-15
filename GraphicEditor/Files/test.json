@@ -1,1 +1,0 @@
-{"$type":"System.Collections.Generic.List`1[[Laba1.Figure, Laba1]], mscorlib","$values":[{"$type":"Trapeze.Trapeze, Trapeze","pointsCount":4,"name":"Трапеция","thikness":2,"points":{"$type":"System.Collections.Generic.List`1[[System.Drawing.Point, System.Drawing]], mscorlib","$values":["87, 74","345, 95","449, 276","129, 283"]},"border":"Black","filling":"Transparent"}]}
