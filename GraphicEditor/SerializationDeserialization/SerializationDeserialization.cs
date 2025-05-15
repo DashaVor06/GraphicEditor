@@ -25,9 +25,18 @@ namespace Laba1.serialization
             {
                 TypeNameHandling = TypeNameHandling.All
             };
-            ListFigures.ListUndo = JsonConvert.DeserializeObject<List<Figure>>(json, settings);
-            ListFigures.ListRedo = ListFigures.ListUndo.ToList();
+            try
+            {
+                ListFigures.ListUndo = JsonConvert.DeserializeObject<List<Figure>>(json, settings);
+                ListFigures.ListRedo = ListFigures.ListUndo.ToList();
+                
+            }
+            catch
+            {
+
+            }
             return ListFigures;
+
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using Laba1.serialization;
+using System.Threading.Tasks;
 
 namespace Laba1
 {
@@ -48,6 +49,7 @@ namespace Laba1
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    AddPluginAsync(openFileDialog.FileName);
                     Assembly assembly = Assembly.LoadFrom(openFileDialog.FileName);
                     func(assembly, form, MenuItem, ListFigures);
                 }
@@ -61,9 +63,11 @@ namespace Laba1
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             func(assembly, form, MenuItem, ListFigures);
+            //loadPlugins(form, MenuItem, ListFigures);
+
         }
 
-        public static void LoadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
+        private static void loadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
         {
             string pluginsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Plugins");
             foreach (string dllPath in Directory.GetFiles(pluginsDir, "*.dll"))
@@ -71,6 +75,32 @@ namespace Laba1
                 Assembly assembly = Assembly.LoadFrom(dllPath);
                 func(assembly, form, MenuItem, ListFigures);
             }
+        }
+
+        public static bool AddPluginAsync(string fileName)
+        {
+            string createdFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Plugins", Path.GetFileName(fileName));
+            if (File.Exists(createdFileName))
+            {
+                return false;
+            }
+            byte[] bytes;
+            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            {
+                bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, bytes.Length);
+            }
+            using (FileStream fs = new FileStream(createdFileName, FileMode.Create, FileAccess.Write))
+            {
+                fs.Write(bytes, 0, bytes.Length);
+            }
+            return true;
+        }
+
+
+        public static void LoadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
+        {
+            loadPlugins(form, MenuItem, ListFigures);
         }
     }
 }
