@@ -59,7 +59,6 @@ namespace Laba1
             _down = true;
             ListFigures.AddPoint(this);
             mouseMove();
-            //if (ListFigures.Current.points.Count == 1 && ListFigures.Current.pointsCount == 2) ListFigures.AddPoint(this);    
         }
 
         private void saveFunc()
@@ -86,13 +85,13 @@ namespace Laba1
             saveFunc();
         }
 
-        private void сохранитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 SerializationDeserialization.serialize(ListFigures, saveFileDialog.FileName);
         }
 
-        private void открытьToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -104,12 +103,12 @@ namespace Laba1
             }
         }
 
-        private void отменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListFigures.Undo(this);
         }
 
-        private void вернутьToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void redoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ListFigures.Redo(this);
         }
@@ -135,28 +134,28 @@ namespace Laba1
             ListFigures.PrintCurrent(this);
         }
 
-        private void безКонтураToolStripMenuItem_Click(object sender, EventArgs e)
+        private void noBorderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorDialogBorder.Color = Color.Transparent;
             takeParams();
             ListFigures.PrintCurrent(this);
         }
 
-        private void сплошнойЦветToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void withBorderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             colorDialogBorder.ShowDialog();
             takeParams();
             ListFigures.PrintCurrent(this);
         }
 
-        private void безЗаливкиToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void noFillingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             colorDialogFilling.Color = Color.Transparent;
             takeParams();
             ListFigures.PrintCurrent(this);
         }
 
-        private void сплошнойЦветToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void withFillingToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             colorDialogFilling.ShowDialog();
             takeParams();
