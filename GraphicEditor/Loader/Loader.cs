@@ -29,7 +29,7 @@ namespace Laba1
                     };
                     string folderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "pictures"));
                     string filePath = Path.Combine(folderPath, $"{fieldNameValue}.png");
-                   // newButton.Image = Image.FromFile(filePath);
+                    newButton.Image = Image.FromFile(filePath);
                     MenuItem.DropDownItems.Add(newButton);
                 }
             }
@@ -63,8 +63,6 @@ namespace Laba1
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             func(assembly, form, MenuItem, ListFigures);
-            //loadPlugins(form, MenuItem, ListFigures);
-
         }
 
         private static void loadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
