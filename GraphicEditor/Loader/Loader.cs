@@ -68,6 +68,10 @@ namespace Laba1
         private static void loadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
         {
             string pluginsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Plugins");
+            if (!Directory.Exists(pluginsDir))
+            {
+                Directory.CreateDirectory(pluginsDir);
+            }
             foreach (string dllPath in Directory.GetFiles(pluginsDir, "*.dll"))
             {
                 Assembly assembly = Assembly.LoadFrom(dllPath);
@@ -76,18 +80,26 @@ namespace Laba1
         }
 
         public static bool AddPluginAsync(string fileName)
-        {
-            string createdFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Plugins", Path.GetFileName(fileName));
+        {        
+            string pluginsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Plugins");
+            if (!Directory.Exists(pluginsDirectory))
+            {
+                Directory.CreateDirectory(pluginsDirectory);
+            }
+
+            string createdFileName = Path.Combine(pluginsDirectory, Path.GetFileName(fileName));
             if (File.Exists(createdFileName))
             {
                 return false;
             }
+
             byte[] bytes;
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 bytes = new byte[fs.Length];
                 fs.Read(bytes, 0, bytes.Length);
             }
+
             using (FileStream fs = new FileStream(createdFileName, FileMode.Create, FileAccess.Write))
             {
                 fs.Write(bytes, 0, bytes.Length);
