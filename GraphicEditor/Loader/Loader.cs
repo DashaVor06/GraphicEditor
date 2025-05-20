@@ -95,7 +95,6 @@ namespace Laba1
             return true;
         }
 
-
         public static void LoadPlugins(fMain form, ToolStripMenuItem MenuItem, ListFigures ListFigures)
         {
             loadPlugins(form, MenuItem, ListFigures);
