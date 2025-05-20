@@ -29,7 +29,7 @@ namespace Laba1
                     };
                     string folderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "pictures"));
                     string filePath = Path.Combine(folderPath, $"{fieldNameValue}.png");
-                    newButton.Image = Image.FromFile(filePath);
+                   // newButton.Image = Image.FromFile(filePath);
                     MenuItem.DropDownItems.Add(newButton);
                 }
             }

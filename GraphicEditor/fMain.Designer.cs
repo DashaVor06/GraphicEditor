@@ -34,10 +34,6 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.фигурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.толщинаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +45,10 @@
             this.fillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noFillingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.withFillingЦветToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +95,89 @@
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
+            // фигурыToolStripMenuItem
+            // 
+            this.фигурыToolStripMenuItem.Name = "фигурыToolStripMenuItem";
+            this.фигурыToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.фигурыToolStripMenuItem.Text = "Фигуры";
+            // 
+            // толщинаToolStripMenuItem
+            // 
+            this.толщинаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
+            this.толщинаToolStripMenuItem.Name = "толщинаToolStripMenuItem";
+            this.толщинаToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.толщинаToolStripMenuItem.Text = "Толщина";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItem4.Text = "1";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItem5.Text = "2";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(80, 22);
+            this.toolStripMenuItem6.Text = "3";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
+            // borderToolStripMenuItem
+            // 
+            this.borderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noBorderToolStripMenuItem,
+            this.withBorderToolStripMenuItem1});
+            this.borderToolStripMenuItem.Name = "borderToolStripMenuItem";
+            this.borderToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.borderToolStripMenuItem.Text = "Контур";
+            // 
+            // noBorderToolStripMenuItem
+            // 
+            this.noBorderToolStripMenuItem.Name = "noBorderToolStripMenuItem";
+            this.noBorderToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.noBorderToolStripMenuItem.Text = "Без контура";
+            this.noBorderToolStripMenuItem.Click += new System.EventHandler(this.noBorderToolStripMenuItem_Click);
+            // 
+            // withBorderToolStripMenuItem1
+            // 
+            this.withBorderToolStripMenuItem1.Name = "withBorderToolStripMenuItem1";
+            this.withBorderToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.withBorderToolStripMenuItem1.Text = "Сплошной цвет";
+            this.withBorderToolStripMenuItem1.Click += new System.EventHandler(this.withBorderToolStripMenuItem1_Click);
+            // 
+            // fillingToolStripMenuItem
+            // 
+            this.fillingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noFillingToolStripMenuItem1,
+            this.withFillingЦветToolStripMenuItem2});
+            this.fillingToolStripMenuItem.Name = "fillingToolStripMenuItem";
+            this.fillingToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.fillingToolStripMenuItem.Text = "Заливка";
+            // 
+            // noFillingToolStripMenuItem1
+            // 
+            this.noFillingToolStripMenuItem1.Name = "noFillingToolStripMenuItem1";
+            this.noFillingToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.noFillingToolStripMenuItem1.Text = "Без заливки";
+            this.noFillingToolStripMenuItem1.Click += new System.EventHandler(this.noFillingToolStripMenuItem1_Click);
+            // 
+            // withFillingЦветToolStripMenuItem2
+            // 
+            this.withFillingЦветToolStripMenuItem2.Name = "withFillingЦветToolStripMenuItem2";
+            this.withFillingЦветToolStripMenuItem2.Size = new System.Drawing.Size(162, 22);
+            this.withFillingЦветToolStripMenuItem2.Text = "Сплошной цвет";
+            this.withFillingЦветToolStripMenuItem2.Click += new System.EventHandler(this.withFillingToolStripMenuItem2_Click);
+            // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Image = global::Laba1.Properties.Resources.icons8_сохранить_16;
@@ -131,100 +214,6 @@
             this.redoToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.redoToolStripMenuItem1.Text = "Вернуть";
             this.redoToolStripMenuItem1.Click += new System.EventHandler(this.redoToolStripMenuItem1_Click);
-            // 
-            // фигурыToolStripMenuItem
-            // 
-            this.фигурыToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_разнообразие_16;
-            this.фигурыToolStripMenuItem.Name = "фигурыToolStripMenuItem";
-            this.фигурыToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.фигурыToolStripMenuItem.Text = "Фигуры";
-            // 
-            // толщинаToolStripMenuItem
-            // 
-            this.толщинаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
-            this.толщинаToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_толщина_линии_16;
-            this.толщинаToolStripMenuItem.Name = "толщинаToolStripMenuItem";
-            this.толщинаToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.толщинаToolStripMenuItem.Text = "Толщина";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Image = global::Laba1.Properties.Resources.icons8_horizontal_line_16;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem4.Text = "1";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Image = global::Laba1.Properties.Resources.icons8_horizontal_line_16__1_;
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem5.Text = "2";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Image = global::Laba1.Properties.Resources.icons8_horizontal_line_16__2_;
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem6.Text = "3";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
-            // 
-            // borderToolStripMenuItem
-            // 
-            this.borderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noBorderToolStripMenuItem,
-            this.withBorderToolStripMenuItem1});
-            this.borderToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_цвет_16;
-            this.borderToolStripMenuItem.Name = "borderToolStripMenuItem";
-            this.borderToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.borderToolStripMenuItem.Text = "Контур";
-            // 
-            // noBorderToolStripMenuItem
-            // 
-            this.noBorderToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_крестик_16;
-            this.noBorderToolStripMenuItem.Name = "noBorderToolStripMenuItem";
-            this.noBorderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noBorderToolStripMenuItem.Text = "Без контура";
-            this.noBorderToolStripMenuItem.Click += new System.EventHandler(this.noBorderToolStripMenuItem_Click);
-            // 
-            // withBorderToolStripMenuItem1
-            // 
-            this.withBorderToolStripMenuItem1.Image = global::Laba1.Properties.Resources.icons8_квадрат_16;
-            this.withBorderToolStripMenuItem1.Name = "withBorderToolStripMenuItem1";
-            this.withBorderToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.withBorderToolStripMenuItem1.Text = "Сплошной цвет";
-            this.withBorderToolStripMenuItem1.Click += new System.EventHandler(this.withBorderToolStripMenuItem1_Click);
-            // 
-            // fillingToolStripMenuItem
-            // 
-            this.fillingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noFillingToolStripMenuItem1,
-            this.withFillingЦветToolStripMenuItem2});
-            this.fillingToolStripMenuItem.Image = global::Laba1.Properties.Resources.icons8_цвет_16__1_;
-            this.fillingToolStripMenuItem.Name = "fillingToolStripMenuItem";
-            this.fillingToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.fillingToolStripMenuItem.Text = "Заливка";
-            // 
-            // noFillingToolStripMenuItem1
-            // 
-            this.noFillingToolStripMenuItem1.Image = global::Laba1.Properties.Resources.icons8_крестик_16;
-            this.noFillingToolStripMenuItem1.Name = "noFillingToolStripMenuItem1";
-            this.noFillingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.noFillingToolStripMenuItem1.Text = "Без заливки";
-            this.noFillingToolStripMenuItem1.Click += new System.EventHandler(this.noFillingToolStripMenuItem1_Click);
-            // 
-            // withFillingЦветToolStripMenuItem2
-            // 
-            this.withFillingЦветToolStripMenuItem2.Image = global::Laba1.Properties.Resources.icons8_квадрат_16;
-            this.withFillingЦветToolStripMenuItem2.Name = "withFillingЦветToolStripMenuItem2";
-            this.withFillingЦветToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.withFillingЦветToolStripMenuItem2.Text = "Сплошной цвет";
-            this.withFillingЦветToolStripMenuItem2.Click += new System.EventHandler(this.withFillingToolStripMenuItem2_Click);
             // 
             // fMain
             // 
